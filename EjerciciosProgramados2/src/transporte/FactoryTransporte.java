@@ -22,7 +22,17 @@ public class FactoryTransporte {
         return factoryTransporte;
     }
     
-    public Transporte createTransporte() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Transporte createTransporte(String tipoTransporte) {
+        if(tipoTransporte == null) {
+            return null;
+        } else if (tipoTransporte.equalsIgnoreCase("BUS")) {
+            return new Bus();
+        } else if (tipoTransporte.equalsIgnoreCase("AUTOMOVIL")) {
+            return new Automovil();
+        } else if (tipoTransporte.equalsIgnoreCase("PESADO")) {
+            return new TransportePesado();
+        }
+        
+        return null;
     }
 }

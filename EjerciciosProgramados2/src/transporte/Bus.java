@@ -7,13 +7,16 @@ package transporte;
 
 /**
  *
- * @author 50685
+ * @author Antony Artavia
  */
 public class Bus extends Transporte {
 
+    public Bus() {}
+    
     @Override
     public void transportar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String msg = "Soy un bus que puede llevar a "+this.getNumPersonas()+" personas";
+        msg += " y tiene "+this.getCantidadCombustible()+" litros de combustible en el tanque";
+        System.out.println(msg);
     }
-    
 }
