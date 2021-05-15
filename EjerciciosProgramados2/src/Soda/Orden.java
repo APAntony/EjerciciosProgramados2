@@ -32,6 +32,7 @@ public class Orden {
     public String toString() {
         String mensaje = "";
         mensaje += "Orden: " +this.identificador+ "\n";
+        mensaje += "Precio: " +this.getPrecioTotal()+"\n";
         mensaje += "Productos: \n";
         
         for (Producto producto: productos) {

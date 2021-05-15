@@ -29,4 +29,16 @@ public class PoolOrdenes {
     public  void agregarOrden(Orden orden) {
         this.ordenes.add(orden);
     }
+
+    @Override
+    public String toString() {
+        String msg = "Ordenes en el Pool: <\n";
+        
+        for (Orden orden: ordenes) {
+            msg += "Orden N°: " + orden.getIdentificador()+"\n";
+        }
+        msg += ">\n";
+        
+        return msg;
+    }
 }

@@ -6,9 +6,10 @@ package Soda;
  */
 public class Repartidor {
     private Orden orden;
+    private String nombre;
 
-    public Repartidor(Orden orden) {
-        this.orden = orden;
+    public Repartidor(String nombre) {
+        this.nombre = nombre;
     }
 
     public Orden getOrden() {
@@ -20,10 +21,20 @@ public class Repartidor {
     }
     
     public void entregar() {
-        System.out.println("Voy a entregar la orden: " + orden.getIdentificador());
+        System.out.println("Soy "+this.nombre+" y voy a entregar la orden: " + orden.getIdentificador());
     }
     
     public void obtenerOrden() {
         this.orden = PoolOrdenes.getInstance().adquirirOrden();
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
 }
