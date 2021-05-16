@@ -1,4 +1,4 @@
-package Soda;
+package soda;
 
 /**
  *

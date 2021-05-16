@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Soda;
+package soda;
 
 /**
  *
@@ -17,13 +17,14 @@ public class Main {
         //Creacion de dos repartidores
         Repartidor repartidor1 = new Repartidor("Antony");
         Repartidor repartidor2 = new Repartidor("Zhong");
+        Repartidor repartidor3 = new Repartidor("Andres");
         
         //Creacion de productos
         Producto dona = new Producto("Dona", 1550, "Donas cubiertas con chocolate");
         Producto hamburquesaP = new Producto("Hamburguesa", 1700, "Amburguesa con torta de pescado");
         Producto papasFritas = new Producto("Papas fritas", 1000, "30 papas fritas con salsa");
         Producto polloFrito = new Producto("Pollo frito", 2200, "Pollo frito clasico");
-        Producto alitasFriats = new Producto("Alitas de pollo", 1500, "Alitas de pollo frito");
+        Producto alitasFritas = new Producto("Alitas de pollo", 1500, "Alitas de pollo frito");
         Producto cocaCola = new Producto("Coca Cola", 750, "Bebida gaseosa");
         Producto pepsi = new Producto("Pepsi", 650, "Bebida gaseosa");
         
@@ -38,7 +39,7 @@ public class Main {
         
         Orden orden2 = new Orden(54321);
         orden2.addProducto(polloFrito);
-        orden2.addProducto(alitasFriats);
+        orden2.addProducto(alitasFritas);
         orden2.addProducto(cocaCola);
         System.out.println(orden2.toString());
         
@@ -47,11 +48,18 @@ public class Main {
         orden3.addProducto(pepsi);
         System.out.println(orden3.toString());
         
+        Orden orden4 = new Orden(98765);
+        orden4.addProducto(polloFrito);
+        orden4.addProducto(pepsi);
+        orden4.addProducto(cocaCola);
+        orden4.addProducto(alitasFritas);
+        System.out.println(orden4.toString());
         
         //Se agregan las ordenes al Pool
         pool.agregarOrden(orden1);
         pool.agregarOrden(orden2);
         pool.agregarOrden(orden3);
+        pool.agregarOrden(orden4);
         
         //Despliuegue del pool actual
         System.out.println("---------------------------------------------------");
@@ -59,11 +67,13 @@ public class Main {
         System.out.println(pool.toString());
         
         //Los repartidores consiguen una orden
-        System.out.println("Dos repartidores consiguen ordenes");
+        System.out.println("Tres repartidores consiguen ordenes");
         repartidor1.obtenerOrden();
         repartidor2.obtenerOrden();
+        repartidor3.obtenerOrden();
         repartidor1.entregar();
         repartidor2.entregar();
+        repartidor3.entregar();
         
         System.out.println();
         
